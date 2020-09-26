@@ -31,6 +31,7 @@ ext {
     junit = '4.12'
     extJunit = '1.1.2'
     espresso = '3.3.0'
+    koin_version = '1.0.2'
 }
 
 dependencies {
@@ -38,9 +39,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$ktx"
     implementation "androidx.appcompat:appcompat:$appCompat"
-    implementation "androidx.constraintlayout:constraintlayout:$constraint"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint"// Koin for Android
+    implementation "org.koin:koin-android:$koin_version"
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$extJunit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
-
 }
