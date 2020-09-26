@@ -17,11 +17,20 @@ android {
     }
 
     buildTypes {
+
+        debug {
+            minifyEnabled false
+            buildConfigField "String", "API_URL", "\"https://restcountries.eu/rest/v2/\""
+            debuggable true
+        }
+        
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
 
 ext {
@@ -31,7 +40,8 @@ ext {
     junit = '4.12'
     extJunit = '1.1.2'
     espresso = '3.3.0'
-    koin_version = '1.0.2'
+    koin_version = '2.1.6'
+    retrofit = '2.9.0'
 }
 
 dependencies {
@@ -39,8 +49,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$ktx"
     implementation "androidx.appcompat:appcompat:$appCompat"
-    implementation "androidx.constraintlayout:constraintlayout:$constraint"// Koin for Android
+    implementation "androidx.constraintlayout:constraintlayout:$constraint"
     implementation "org.koin:koin-android:$koin_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
     testImplementation "junit:junit:$junit"
     androidTestImplementation "androidx.test.ext:junit:$extJunit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"

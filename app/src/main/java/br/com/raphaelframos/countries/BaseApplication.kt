@@ -1,13 +1,20 @@
 package br.com.raphaelframos.countries
 
 import android.app.Application
+import br.com.raphaelframos.countries.di.apiModule
 import br.com.raphaelframos.countries.di.appModule
-import org.koin.android.ext.android.startKoin
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
 
 class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        startKoin(this, listOf(appModule))
+        startKoin {
+            androidLogger()
+            androidContext(this@BaseApplication)
+            modules(listOf(apiModule))
+        }
     }
 }
