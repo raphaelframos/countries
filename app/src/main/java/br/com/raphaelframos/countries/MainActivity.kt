@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         initRecyclerView()
         initViewModel()
         setContentView(viewBinding.root)
-
     }
 
     private fun initRecyclerView() {
