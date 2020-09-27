@@ -2,7 +2,6 @@ package br.com.raphaelframos.countries
 
 import android.app.Application
 import br.com.raphaelframos.countries.di.apiModule
-import br.com.raphaelframos.countries.di.appModule
 import br.com.raphaelframos.countries.di.repositoryModule
 import br.com.raphaelframos.countries.di.viewModel
 import org.koin.android.ext.koin.androidContext
